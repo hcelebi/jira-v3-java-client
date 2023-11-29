@@ -1,8 +1,10 @@
 package io.github.hcelebi.jirav3.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.hcelebi.jirav3.domain.dto.ChangeLogsResult;
-import io.github.hcelebi.jirav3.domain.dto.issue.Issue;
+import io.github.hcelebi.jirav3.domain.request.GetSearchResultRequest;
+import io.github.hcelebi.jirav3.domain.response.ChangeLogsResult;
+import io.github.hcelebi.jirav3.domain.response.issue.Issue;
+import io.github.hcelebi.jirav3.domain.response.search.SearchResult;
 import io.github.hcelebi.jirav3.exception.JiraV3RunTimeException;
 
 import java.io.IOException;
@@ -33,6 +35,22 @@ public class JiraV3RestClient {
                     .GET()
                     .build(), BodyHandlers.ofString());
             return objectMapper.readValue(response.body(), Issue.class);
+        } catch (IOException | InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new JiraV3RunTimeException(e.getMessage());
+        }
+    }
+
+    public SearchResult getSearchResult(GetSearchResultRequest getSearchResultRequest) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            HttpResponse<String> response = client.send(HttpRequest.newBuilder()
+                    .uri(URI.create(baseUri + "/search"))
+                    .header("Authorization", "Basic " + token)
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(objectMapper.writeValueAsString(getSearchResultRequest)))
+                    .build(), BodyHandlers.ofString());
+            return objectMapper.readValue(response.body(), SearchResult.class);
         } catch (IOException | InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new JiraV3RunTimeException(e.getMessage());

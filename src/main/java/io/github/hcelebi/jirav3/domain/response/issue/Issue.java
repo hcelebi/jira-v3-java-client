@@ -1,4 +1,4 @@
-package io.github.hcelebi.jirav3.domain.dto.issue;
+package io.github.hcelebi.jirav3.domain.response.issue;
 
 import lombok.Data;
 

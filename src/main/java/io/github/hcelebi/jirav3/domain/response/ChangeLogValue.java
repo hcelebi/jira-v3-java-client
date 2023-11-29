@@ -1,4 +1,4 @@
-package io.github.hcelebi.jirav3.domain.dto;
+package io.github.hcelebi.jirav3.domain.response;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
