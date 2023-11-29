@@ -2,6 +2,7 @@ package io.github.hcelebi.jirav3.client;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.hcelebi.jirav3.domain.dto.ChangeLogsResult;
+import io.github.hcelebi.jirav3.domain.dto.issue.Issue;
 import io.github.hcelebi.jirav3.exception.JiraV3RunTimeException;
 
 import java.io.IOException;
@@ -20,6 +21,22 @@ public class JiraV3RestClient {
         this.baseUri = baseUri;
         this.token = token;
         client = HttpClient.newHttpClient();
+    }
+
+    public Issue getIssue(String issueKey) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            HttpResponse<String> response = client.send(HttpRequest.newBuilder()
+                    .uri(URI.create(baseUri + "/issue/" + issueKey))
+                    .header("Authorization", "Basic " + token)
+                    .header("Content-Type", "application/json")
+                    .GET()
+                    .build(), BodyHandlers.ofString());
+            return objectMapper.readValue(response.body(), Issue.class);
+        } catch (IOException | InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new JiraV3RunTimeException(e.getMessage());
+        }
     }
 
     public ChangeLogsResult getIssueChangeLogs(String issueKey) {
