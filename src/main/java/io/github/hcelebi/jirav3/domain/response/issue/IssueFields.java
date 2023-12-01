@@ -17,4 +17,5 @@ public class IssueFields implements Serializable {
     private IssueType issuetype;
     private Issue parent;
     private IssueStatus status;
+    private Long customfield_10032;
 }

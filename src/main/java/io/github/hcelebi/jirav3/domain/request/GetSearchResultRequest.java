@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Builder
@@ -18,4 +19,5 @@ public class GetSearchResultRequest implements Serializable {
     private Integer startAt = 0;
     @Builder.Default
     private Integer maxResults = 100;
+    private List<String> fields;
 }
