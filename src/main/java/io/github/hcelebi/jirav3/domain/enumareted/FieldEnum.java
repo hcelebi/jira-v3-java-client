@@ -5,6 +5,7 @@ public enum FieldEnum {
     ISSUE_LINKS("issuelinks"),
     ISSUE_TYPE("issuetype"),
     PARENT("parent"),
+    STATUS("status"),
     STORY_POINT("customfield_10032");
 
     public final String value;
