@@ -7,7 +7,8 @@ public enum FieldEnum {
     PARENT("parent"),
     STATUS("status"),
     STORY_POINT("customfield_10032"),
-    RESOLUTION("resolution");
+    RESOLUTION("resolution"),
+    RESOLUTION_DATE("resolutiondate");
 
     public final String value;
 
