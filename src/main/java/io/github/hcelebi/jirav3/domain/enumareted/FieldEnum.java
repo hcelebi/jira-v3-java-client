@@ -8,7 +8,10 @@ public enum FieldEnum {
     STATUS("status"),
     STORY_POINT("customfield_10032"),
     RESOLUTION("resolution"),
-    RESOLUTION_DATE("resolutiondate");
+    RESOLUTION_DATE("resolutiondate"),
+    ASSIGNEE("assignee"),
+    IS_TESTABLE("customfield_10224"),
+    NOT_TESTING_REASON("customfield_10225");
 
     public final String value;
 

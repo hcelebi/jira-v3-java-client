@@ -1,6 +1,7 @@
 package io.github.hcelebi.jirav3.domain.response.issue;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import io.github.hcelebi.jirav3.serializer.CustomDateTimeDeserializer;
 import lombok.Data;
@@ -24,4 +25,9 @@ public class IssueFields implements Serializable {
     private IssueResolution issueResolution;
     @JsonDeserialize(using = CustomDateTimeDeserializer.class)
     private DateTime resolutiondate;
+    private IssueAssignee assignee;
+    @JsonProperty("customfield_10224")
+    private IsTestable isTestable;
+    @JsonProperty("customfield_10225")
+    private NotTestingReason notTestingReason;
 }
