@@ -32,4 +32,5 @@ public class IssueFields implements Serializable {
     private NotTestingReason notTestingReason;
     @JsonProperty("customfield_10019")
     private String rank;
+    private List<Issue> subtasks;
 }
