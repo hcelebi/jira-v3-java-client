@@ -5,6 +5,7 @@ import io.github.hcelebi.jirav3.domain.request.GetSearchResultRequest;
 import io.github.hcelebi.jirav3.domain.response.ChangeLogsResult;
 import io.github.hcelebi.jirav3.domain.response.issue.Issue;
 import io.github.hcelebi.jirav3.domain.response.search.SearchResult;
+import io.github.hcelebi.jirav3.domain.response.user.User;
 import io.github.hcelebi.jirav3.exception.JiraV3RunTimeException;
 
 import java.io.IOException;
@@ -67,6 +68,22 @@ public class JiraV3RestClient {
                     .GET()
                     .build(), BodyHandlers.ofString());
             return objectMapper.readValue(response.body(), ChangeLogsResult.class);
+        } catch (IOException | InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new JiraV3RunTimeException(e.getMessage());
+        }
+    }
+
+    public User getUser(String accountId) {
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            HttpResponse<String> response = client.send(HttpRequest.newBuilder()
+                    .uri(URI.create(baseUri + "/user/?accountId=" + accountId))
+                    .header("Authorization", "Basic " + token)
+                    .header("Content-Type", "application/json")
+                    .GET()
+                    .build(), BodyHandlers.ofString());
+            return objectMapper.readValue(response.body(), User.class);
         } catch (IOException | InterruptedException e) {
             Thread.currentThread().interrupt();
             throw new JiraV3RunTimeException(e.getMessage());
