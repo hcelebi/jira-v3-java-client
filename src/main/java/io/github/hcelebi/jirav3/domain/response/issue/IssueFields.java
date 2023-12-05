@@ -30,4 +30,6 @@ public class IssueFields implements Serializable {
     private IsTestable isTestable;
     @JsonProperty("customfield_10225")
     private NotTestingReason notTestingReason;
+    @JsonProperty("customfield_10019")
+    private String rank;
 }

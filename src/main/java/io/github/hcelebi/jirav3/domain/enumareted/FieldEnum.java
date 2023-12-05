@@ -11,7 +11,8 @@ public enum FieldEnum {
     RESOLUTION_DATE("resolutiondate"),
     ASSIGNEE("assignee"),
     IS_TESTABLE("customfield_10224"),
-    NOT_TESTING_REASON("customfield_10225");
+    NOT_TESTING_REASON("customfield_10225"),
+    RANK("customfield_10019");
 
     public final String value;
 
