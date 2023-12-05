@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.hcelebi</groupId>
     <artifactId>jira-v3-java-client</artifactId>
-    <version>1.8.0</version>
+    <version>1.9.0</version>
     <description>Jira V3 Java Client</description>
     <packaging>jar</packaging>
     <licenses>
