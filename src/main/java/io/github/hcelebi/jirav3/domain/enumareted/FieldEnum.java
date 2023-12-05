@@ -13,7 +13,8 @@ public enum FieldEnum {
     IS_TESTABLE("customfield_10224"),
     NOT_TESTING_REASON("customfield_10225"),
     RANK("customfield_10019"),
-    SUBTASKS("subtasks");
+    SUBTASKS("subtasks"),
+    CREATED("created");
 
     public final String value;
 

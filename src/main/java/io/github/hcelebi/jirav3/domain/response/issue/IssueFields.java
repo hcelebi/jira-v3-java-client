@@ -33,4 +33,6 @@ public class IssueFields implements Serializable {
     @JsonProperty("customfield_10019")
     private String rank;
     private List<Issue> subtasks;
+    @JsonDeserialize(using = CustomDateTimeDeserializer.class)
+    private DateTime created;
 }
