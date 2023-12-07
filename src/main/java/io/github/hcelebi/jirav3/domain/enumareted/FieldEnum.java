@@ -14,7 +14,8 @@ public enum FieldEnum {
     NOT_TESTING_REASON("customfield_10225"),
     RANK("customfield_10019"),
     SUBTASKS("subtasks"),
-    CREATED("created");
+    CREATED("created"),
+    SPRINT("customfield_10020");
 
     public final String value;
 

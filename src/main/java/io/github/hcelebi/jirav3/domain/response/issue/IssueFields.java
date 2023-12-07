@@ -35,4 +35,6 @@ public class IssueFields implements Serializable {
     private List<Issue> subtasks;
     @JsonDeserialize(using = CustomDateTimeDeserializer.class)
     private DateTime created;
+    private IssueSprint sprint;
+
 }
