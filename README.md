@@ -11,3 +11,7 @@ Add Dependency and configure create instance
 ```java
 JiraV3RestClient client = new JiraV3RestClient("baseUri", "token", HttpClient.newHttpClient());
 ```
+
+```shell
+ mvn verify gpg:sign install:install deploy:deploy -s settings.xml -DMAVEN_USERNAME= -DMAVEN_PASSWORD=
+```
