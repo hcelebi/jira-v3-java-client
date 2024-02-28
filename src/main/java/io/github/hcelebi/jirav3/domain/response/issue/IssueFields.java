@@ -37,5 +37,6 @@ public class IssueFields implements Serializable {
     private DateTime created;
     @JsonProperty("customfield_10020")
     private List<IssueSprint> sprints;
+    private List<String> labels;
 
 }
