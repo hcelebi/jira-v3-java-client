@@ -15,7 +15,8 @@ public enum FieldEnum {
     RANK("customfield_10019"),
     SUBTASKS("subtasks"),
     CREATED("created"),
-    SPRINTS("customfield_10020");
+    SPRINTS("customfield_10020"),
+    MAJOR_INCIDENT_SQUAD("customfield_11071");
 
     public final String value;
 
