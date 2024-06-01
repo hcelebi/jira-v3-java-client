@@ -16,7 +16,9 @@ public enum FieldEnum {
     SUBTASKS("subtasks"),
     CREATED("created"),
     SPRINTS("customfield_10020"),
-    MAJOR_INCIDENT_SQUAD("customfield_11071");
+    MAJOR_INCIDENT_SQUAD("customfield_11071"),
+
+    LABELS("labels");
 
     public final String value;
 
