@@ -40,5 +40,6 @@ public class IssueFields implements Serializable {
     private List<String> labels;
     @JsonProperty("customfield_11071")
     private List<MajorIncidentSquad> majorIncidentSquads;
+    private IssueAssignee reporter;
 
 }
