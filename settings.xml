@@ -4,9 +4,9 @@
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
     <servers>
         <server>
-            <id>central</id>
-            <username>${MAVEN_USERNAME}</username>
-            <password>${MAVEN_PASSWORD}</password>
+            <id>clojars</id>
+            <username>hcelebi</username>
+            <password>CLOJARS_3be1654e0416b0509e2bac64dcb3c9558c061136240a41e526af7745c543</password>
         </server>
     </servers>
 </settings>
